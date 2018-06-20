@@ -1,74 +1,148 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DulsaWebModelStoreContainer" CdmEntityContainer="DulsaWebEntities">
-    <EntitySetMapping Name="Lotes">
-      <EntityTypeMapping TypeName="DulsaWebModel.Lotes">
-        <MappingFragment StoreEntitySet="Lotes">
-          <ScalarProperty Name="id_lote" ColumnName="id_lote" />
-          <ScalarProperty Name="Lote" ColumnName="Lote" />
-          <ScalarProperty Name="Manzana" ColumnName="Manzana" />
-          <ScalarProperty Name="Etapa" ColumnName="Etapa" />
-          <ScalarProperty Name="M2" ColumnName="M2" />
-          <ScalarProperty Name="M2_Excedente" ColumnName="M2 Excedente" />
-          <ScalarProperty Name="Importe_Excedente" ColumnName="Importe_Excedente" />
-          <ScalarProperty Name="Esquina" ColumnName="Esquina" />
-          <ScalarProperty Name="Importe_Total" ColumnName="Importe_Total" />
-          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+  <EntityContainerMapping StorageEntityContainer="DB_A28A96_AlonsoDBModelStoreContainer" CdmEntityContainer="DB_A28A96_AlonsoDBEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Asesores">
-      <EntityTypeMapping TypeName="DulsaWebModel.Asesores">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.Asesores">
         <MappingFragment StoreEntitySet="Asesores">
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
-          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="id_asesore" ColumnName="id_asesore" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Lista_Venta">
-      <EntityTypeMapping TypeName="DulsaWebModel.Lista_Venta">
-        <MappingFragment StoreEntitySet="Lista_Venta">
-          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
-          <ScalarProperty Name="Precio_Venta" ColumnName="Precio_Venta" />
-          <ScalarProperty Name="id_prototipo" ColumnName="id_prototipo" />
-          <ScalarProperty Name="id_lista" ColumnName="id_lista" />
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="prototipos">
-      <EntityTypeMapping TypeName="DulsaWebModel.prototipos">
-        <MappingFragment StoreEntitySet="prototipos">
-          <ScalarProperty Name="M2" ColumnName="M2" />
-          <ScalarProperty Name="Prototipo" ColumnName="Prototipo" />
-          <ScalarProperty Name="id_prototipo" ColumnName="id_prototipo" />
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clientes">
-      <EntityTypeMapping TypeName="DulsaWebModel.Clientes">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.Clientes">
         <MappingFragment StoreEntitySet="Clientes">
-          <ScalarProperty Name="Beneficiario" ColumnName="Beneficiario" />
-          <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
-          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Telefono_Oficina" ColumnName="Telefono_Oficina" />
-          <ScalarProperty Name="Telefono_Celular" ColumnName="Telefono_Celular" />
-          <ScalarProperty Name="Telefono_casa" ColumnName="Telefono_casa" />
-          <ScalarProperty Name="Lugar_nacimiento" ColumnName="Lugar_nacimiento" />
-          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
-          <ScalarProperty Name="RFC" ColumnName="RFC" />
-          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
-          <ScalarProperty Name="Regimen" ColumnName="Regimen" />
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
-          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Regimen" ColumnName="Regimen" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Lugarnacimiento" ColumnName="Lugarnacimiento" />
+          <ScalarProperty Name="Telefonocasa" ColumnName="Telefonocasa" />
+          <ScalarProperty Name="TelefonoCelular" ColumnName="TelefonoCelular" />
+          <ScalarProperty Name="TelefonoOficina" ColumnName="TelefonoOficina" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+          <ScalarProperty Name="Beneficiario" ColumnName="Beneficiario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ListaVenta">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.ListaVenta">
+        <MappingFragment StoreEntitySet="ListaVenta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PrototipoId" ColumnName="PrototipoId" />
+          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lotes">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.Lotes">
+        <MappingFragment StoreEntitySet="Lotes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="Manzana" ColumnName="Manzana" />
+          <ScalarProperty Name="Etapa" ColumnName="Etapa" />
+          <ScalarProperty Name="M2" ColumnName="M2" />
+          <ScalarProperty Name="M2Excedente" ColumnName="M2Excedente" />
+          <ScalarProperty Name="ImporteExcedente" ColumnName="ImporteExcedente" />
+          <ScalarProperty Name="Esquina" ColumnName="Esquina" />
+          <ScalarProperty Name="ImporteTotal" ColumnName="ImporteTotal" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prototipos">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.prototipos">
+        <MappingFragment StoreEntitySet="prototipos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Prototipo" ColumnName="Prototipo" />
+          <ScalarProperty Name="M2" ColumnName="M2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DB_A28A96_AlonsoDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="DB_A28A96_AlonsoDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

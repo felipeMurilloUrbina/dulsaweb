@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Dulsa.Models.Clientes>
+﻿@model IEnumerable<Dulsa.Modelo.Cliente>
 
 @{
     ViewBag.Title = "Index";
@@ -9,119 +9,115 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table id="myTable">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Direccion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ciudad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Regimen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nacionalidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RFC)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha_Nacimiento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lugar_nacimiento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono_casa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono_Celular)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono_Oficina)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Empresa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sueldo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Beneficiario)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Regimen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RFC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lugarnacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefonocasa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoCelular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoOficina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sueldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beneficiario)
+        </th>
+        <th></th>
+    </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Direccion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ciudad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estado)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Regimen)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nacionalidad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RFC)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fecha_Nacimiento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Lugar_nacimiento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telefono_casa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telefono_Celular)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telefono_Oficina)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sueldo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Beneficiario)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id_cliente }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id_cliente }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id_cliente })
-                </td>
-            </tr>
-        }
-    </tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regimen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nacionalidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RFC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lugarnacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefonocasa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonoCelular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonoOficina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sueldo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beneficiario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
 </table>

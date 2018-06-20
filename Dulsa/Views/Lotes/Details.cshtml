@@ -1,22 +1,21 @@
-﻿@model Dulsa.Models.Lotes
+﻿@model Dulsa.Modelo.Lote
 
 @{
-    //ViewBag.Title = "Details";
-    Layout = null;
+    ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Lotes</h4>
+    <h4>Lote</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Lote)
+            @Html.DisplayNameFor(model => model.Descripcion)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Lote)
+            @Html.DisplayFor(model => model.Descripcion)
         </dd>
 
         <dt>
@@ -44,19 +43,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.M2_Excedente)
+            @Html.DisplayNameFor(model => model.M2Excedente)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.M2_Excedente)
+            @Html.DisplayFor(model => model.M2Excedente)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Importe_Excedente)
+            @Html.DisplayNameFor(model => model.ImporteExcedente)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Importe_Excedente)
+            @Html.DisplayFor(model => model.ImporteExcedente)
         </dd>
 
         <dt>
@@ -68,11 +67,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Importe_Total)
+            @Html.DisplayNameFor(model => model.ImporteTotal)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Importe_Total)
+            @Html.DisplayFor(model => model.ImporteTotal)
         </dd>
 
         <dt>
@@ -86,6 +85,6 @@
     </dl>
 </div>
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.id_lote })*@ 
-    @*@Html.ActionLink("Back to List", "Index")*@
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

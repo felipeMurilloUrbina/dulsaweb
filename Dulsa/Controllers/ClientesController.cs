@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Dulsa.Models;
+using Dulsa.Modelo;
 
 namespace Dulsa.Controllers
 {
     public class ClientesController : Controller
     {
-        private DulsaWebEntities db = new DulsaWebEntities();
+        private Contexto db = new Contexto();
 
         // GET: Clientes
         public ActionResult Index()
@@ -27,12 +27,12 @@ namespace Dulsa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Clientes clientes = db.Clientes.Find(id);
-            if (clientes == null)
+            Cliente cliente = db.Clientes.Find(id);
+            if (cliente == null)
             {
                 return HttpNotFound();
             }
-            return View(clientes);
+            return View(cliente);
         }
 
         // GET: Clientes/Create
@@ -42,20 +42,20 @@ namespace Dulsa.Controllers
         }
 
         // POST: Clientes/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_cliente,Nombre,Direccion,Ciudad,Estado,Regimen,Nacionalidad,RFC,Fecha_Nacimiento,Lugar_nacimiento,Telefono_casa,Telefono_Celular,Telefono_Oficina,Email,Empresa,Sueldo,Beneficiario")] Clientes clientes)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Direccion,Ciudad,Estado,Regimen,Nacionalidad,RFC,FechaNacimiento,Lugarnacimiento,Telefonocasa,TelefonoCelular,TelefonoOficina,Email,Empresa,Sueldo,Beneficiario")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
-                db.Clientes.Add(clientes);
+                db.Clientes.Add(cliente);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(clientes);
+            return View(cliente);
         }
 
         // GET: Clientes/Edit/5
@@ -65,28 +65,28 @@ namespace Dulsa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Clientes clientes = db.Clientes.Find(id);
-            if (clientes == null)
+            Cliente cliente = db.Clientes.Find(id);
+            if (cliente == null)
             {
                 return HttpNotFound();
             }
-            return View(clientes);
+            return View(cliente);
         }
 
         // POST: Clientes/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_cliente,Nombre,Direccion,Ciudad,Estado,Regimen,Nacionalidad,RFC,Fecha_Nacimiento,Lugar_nacimiento,Telefono_casa,Telefono_Celular,Telefono_Oficina,Email,Empresa,Sueldo,Beneficiario")] Clientes clientes)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Direccion,Ciudad,Estado,Regimen,Nacionalidad,RFC,FechaNacimiento,Lugarnacimiento,Telefonocasa,TelefonoCelular,TelefonoOficina,Email,Empresa,Sueldo,Beneficiario")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(clientes).State = EntityState.Modified;
+                db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(clientes);
+            return View(cliente);
         }
 
         // GET: Clientes/Delete/5
@@ -96,12 +96,12 @@ namespace Dulsa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Clientes clientes = db.Clientes.Find(id);
-            if (clientes == null)
+            Cliente cliente = db.Clientes.Find(id);
+            if (cliente == null)
             {
                 return HttpNotFound();
             }
-            return View(clientes);
+            return View(cliente);
         }
 
         // POST: Clientes/Delete/5
@@ -109,8 +109,8 @@ namespace Dulsa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Clientes clientes = db.Clientes.Find(id);
-            db.Clientes.Remove(clientes);
+            Cliente cliente = db.Clientes.Find(id);
+            db.Clientes.Remove(cliente);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

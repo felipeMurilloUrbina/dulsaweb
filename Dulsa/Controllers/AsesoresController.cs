@@ -6,111 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Dulsa.Models;
+using Dulsa.Modelo;
 
 namespace Dulsa.Controllers
 {
     public class AsesoresController : Controller
     {
-        private DulsaWebEntities db = new DulsaWebEntities();
+        private Contexto db = new Contexto();
 
-        // GET: Asesores
+        // GET: Asesors
         public ActionResult Index()
         {
             return View(db.Asesores.ToList());
         }
 
-        // GET: Asesores/Details/5
+        // GET: Asesors/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Asesores asesores = db.Asesores.Find(id);
-            if (asesores == null)
+            Asesor asesor = db.Asesores.Find(id);
+            if (asesor == null)
             {
                 return HttpNotFound();
             }
-            return View(asesores);
+            return View(asesor);
         }
 
-        // GET: Asesores/Create
+        // GET: Asesors/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Asesores/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Asesors/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_asesore,Nombre,Apellido_Paterno,Apellido_Materno,Telefono")] Asesores asesores)
+        public ActionResult Create([Bind(Include = "Id,Nombre,ApellidoPaterno,ApellidoMaterno,Telefono")] Asesor asesor)
         {
             if (ModelState.IsValid)
             {
-                db.Asesores.Add(asesores);
+                db.Asesores.Add(asesor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(asesores);
+            return View(asesor);
         }
 
-        // GET: Asesores/Edit/5
+        // GET: Asesors/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Asesores asesores = db.Asesores.Find(id);
-            if (asesores == null)
+            Asesor asesor = db.Asesores.Find(id);
+            if (asesor == null)
             {
                 return HttpNotFound();
             }
-            return View(asesores);
+            return View(asesor);
         }
 
-        // POST: Asesores/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Asesors/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_asesore,Nombre,Apellido_Paterno,Apellido_Materno,Telefono")] Asesores asesores)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,ApellidoPaterno,ApellidoMaterno,Telefono")] Asesor asesor)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(asesores).State = EntityState.Modified;
+                db.Entry(asesor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(asesores);
+            return View(asesor);
         }
 
-        // GET: Asesores/Delete/5
+        // GET: Asesors/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Asesores asesores = db.Asesores.Find(id);
-            if (asesores == null)
+            Asesor asesor = db.Asesores.Find(id);
+            if (asesor == null)
             {
                 return HttpNotFound();
             }
-            return View(asesores);
+            return View(asesor);
         }
 
-        // POST: Asesores/Delete/5
+        // POST: Asesors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Asesores asesores = db.Asesores.Find(id);
-            db.Asesores.Remove(asesores);
+            Asesor asesor = db.Asesores.Find(id);
+            db.Asesores.Remove(asesor);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
