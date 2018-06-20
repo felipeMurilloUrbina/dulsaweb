@@ -6,111 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Dulsa.Models;
+using Dulsa.Modelo;
 
 namespace Dulsa.Controllers
 {
-    public class prototiposController : Controller
+    public class PrototiposController : Controller
     {
-        private DulsaWebEntities db = new DulsaWebEntities();
+        private Contexto db = new Contexto();
 
-        // GET: prototipos
+        // GET: Prototipoes
         public ActionResult Index()
         {
-            return View(db.prototipos.ToList());
+            return View(db.Prototipos.ToList());
         }
 
-        // GET: prototipos/Details/5
+        // GET: Prototipoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            prototipos prototipos = db.prototipos.Find(id);
-            if (prototipos == null)
+            Prototipo prototipo = db.Prototipos.Find(id);
+            if (prototipo == null)
             {
                 return HttpNotFound();
             }
-            return View(prototipos);
+            return View(prototipo);
         }
 
-        // GET: prototipos/Create
+        // GET: Prototipoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: prototipos/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Prototipoes/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_prototipo,Prototipo,M2")] prototipos prototipos)
+        public ActionResult Create([Bind(Include = "Id,Descripcion,M2")] Prototipo prototipo)
         {
             if (ModelState.IsValid)
             {
-                db.prototipos.Add(prototipos);
+                db.Prototipos.Add(prototipo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(prototipos);
+            return View(prototipo);
         }
 
-        // GET: prototipos/Edit/5
+        // GET: Prototipoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            prototipos prototipos = db.prototipos.Find(id);
-            if (prototipos == null)
+            Prototipo prototipo = db.Prototipos.Find(id);
+            if (prototipo == null)
             {
                 return HttpNotFound();
             }
-            return View(prototipos);
+            return View(prototipo);
         }
 
-        // POST: prototipos/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Prototipoes/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_prototipo,Prototipo,M2")] prototipos prototipos)
+        public ActionResult Edit([Bind(Include = "Id,Descripcion,M2")] Prototipo prototipo)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(prototipos).State = EntityState.Modified;
+                db.Entry(prototipo).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(prototipos);
+            return View(prototipo);
         }
 
-        // GET: prototipos/Delete/5
+        // GET: Prototipoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            prototipos prototipos = db.prototipos.Find(id);
-            if (prototipos == null)
+            Prototipo prototipo = db.Prototipos.Find(id);
+            if (prototipo == null)
             {
                 return HttpNotFound();
             }
-            return View(prototipos);
+            return View(prototipo);
         }
 
-        // POST: prototipos/Delete/5
+        // POST: Prototipoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            prototipos prototipos = db.prototipos.Find(id);
-            db.prototipos.Remove(prototipos);
+            Prototipo prototipo = db.Prototipos.Find(id);
+            db.Prototipos.Remove(prototipo);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
