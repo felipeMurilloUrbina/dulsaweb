@@ -12,12 +12,12 @@ namespace Dulsa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Asesores
+    public partial class AspNetUserLogins
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
-        public string Telefono { get; set; }
+        public string LoginProvider { get; set; }
+        public string ProviderKey { get; set; }
+        public string UserId { get; set; }
+    
+        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }

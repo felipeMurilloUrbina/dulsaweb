@@ -12,17 +12,13 @@ namespace Dulsa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Lotes
+    public partial class ListaVenta
     {
         public int Id { get; set; }
-        public Nullable<int> Lote { get; set; }
-        public Nullable<int> Manzana { get; set; }
-        public Nullable<int> Etapa { get; set; }
-        public Nullable<decimal> M2 { get; set; }
-        public Nullable<decimal> M2Excedente { get; set; }
-        public Nullable<decimal> ImporteExcedente { get; set; }
-        public Nullable<decimal> Esquina { get; set; }
-        public Nullable<decimal> ImporteTotal { get; set; }
+        public int PrototipoId { get; set; }
+        public Nullable<decimal> PrecioVenta { get; set; }
         public string Estatus { get; set; }
+    
+        public virtual prototipos prototipos { get; set; }
     }
 }

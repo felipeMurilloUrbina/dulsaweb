@@ -12,12 +12,11 @@ namespace Dulsa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Asesores
+    public partial class C__MigrationHistory
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
-        public string Telefono { get; set; }
+        public string MigrationId { get; set; }
+        public string ContextKey { get; set; }
+        public byte[] Model { get; set; }
+        public string ProductVersion { get; set; }
     }
 }
