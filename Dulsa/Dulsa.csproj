@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -212,11 +213,26 @@
     <Compile Include="Models\Asesores.cs">
       <DependentUpon>ModelDulsa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspNetRoles.cs">
+      <DependentUpon>ModelDulsa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaims.cs">
+      <DependentUpon>ModelDulsa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogins.cs">
+      <DependentUpon>ModelDulsa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>ModelDulsa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Clientes.cs">
       <DependentUpon>ModelDulsa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>ModelDulsa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Lista_Venta.cs">
+    <Compile Include="Models\ListaVenta.cs">
       <DependentUpon>ModelDulsa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Lotes.cs">
@@ -239,6 +255,9 @@
       <DependentUpon>ModelDulsa.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\prototipos.cs">
+      <DependentUpon>ModelDulsa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>ModelDulsa.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
