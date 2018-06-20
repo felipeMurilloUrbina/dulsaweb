@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DulsaWebModelStoreContainer" CdmEntityContainer="DulsaWebEntities">
+    <EntitySetMapping Name="Lotes">
+      <EntityTypeMapping TypeName="DulsaWebModel.Lotes">
+        <MappingFragment StoreEntitySet="Lotes">
+          <ScalarProperty Name="id_lote" ColumnName="id_lote" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="Manzana" ColumnName="Manzana" />
+          <ScalarProperty Name="Etapa" ColumnName="Etapa" />
+          <ScalarProperty Name="M2" ColumnName="M2" />
+          <ScalarProperty Name="M2_Excedente" ColumnName="M2 Excedente" />
+          <ScalarProperty Name="Importe_Excedente" ColumnName="Importe_Excedente" />
+          <ScalarProperty Name="Esquina" ColumnName="Esquina" />
+          <ScalarProperty Name="Importe_Total" ColumnName="Importe_Total" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asesores">
+      <EntityTypeMapping TypeName="DulsaWebModel.Asesores">
+        <MappingFragment StoreEntitySet="Asesores">
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="id_asesore" ColumnName="id_asesore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lista_Venta">
+      <EntityTypeMapping TypeName="DulsaWebModel.Lista_Venta">
+        <MappingFragment StoreEntitySet="Lista_Venta">
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+          <ScalarProperty Name="Precio_Venta" ColumnName="Precio_Venta" />
+          <ScalarProperty Name="id_prototipo" ColumnName="id_prototipo" />
+          <ScalarProperty Name="id_lista" ColumnName="id_lista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prototipos">
+      <EntityTypeMapping TypeName="DulsaWebModel.prototipos">
+        <MappingFragment StoreEntitySet="prototipos">
+          <ScalarProperty Name="M2" ColumnName="M2" />
+          <ScalarProperty Name="Prototipo" ColumnName="Prototipo" />
+          <ScalarProperty Name="id_prototipo" ColumnName="id_prototipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="DulsaWebModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Beneficiario" ColumnName="Beneficiario" />
+          <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono_Oficina" ColumnName="Telefono_Oficina" />
+          <ScalarProperty Name="Telefono_Celular" ColumnName="Telefono_Celular" />
+          <ScalarProperty Name="Telefono_casa" ColumnName="Telefono_casa" />
+          <ScalarProperty Name="Lugar_nacimiento" ColumnName="Lugar_nacimiento" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Regimen" ColumnName="Regimen" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

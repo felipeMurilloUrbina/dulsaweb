@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Dulsa.Models.prototipos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Prototipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prototipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.M2)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id_prototipo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id_prototipo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id_prototipo })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

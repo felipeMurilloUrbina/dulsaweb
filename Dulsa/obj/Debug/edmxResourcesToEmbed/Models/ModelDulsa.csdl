@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DulsaWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Lotes">
+    <Key>
+      <PropertyRef Name="id_lote" />
+    </Key>
+    <Property Name="id_lote" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lote" Type="Int32" />
+    <Property Name="Manzana" Type="Int32" />
+    <Property Name="Etapa" Type="Int32" />
+    <Property Name="M2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="M2_Excedente" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Importe_Excedente" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Esquina" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Importe_Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Estatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DulsaWebEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Lotes" EntityType="Self.Lotes" />
+    <EntitySet Name="Asesores" EntityType="DulsaWebModel.Asesores" />
+    <EntitySet Name="Lista_Venta" EntityType="DulsaWebModel.Lista_Venta" />
+    <EntitySet Name="prototipos" EntityType="DulsaWebModel.prototipos" />
+    <AssociationSet Name="FK_Lista_Venta_prototipos" Association="DulsaWebModel.FK_Lista_Venta_prototipos">
+      <End Role="prototipos" EntitySet="prototipos" />
+      <End Role="Lista_Venta" EntitySet="Lista_Venta" />
+    </AssociationSet>
+    <EntitySet Name="Clientes" EntityType="DulsaWebModel.Clientes" />
+  </EntityContainer>
+  <EntityType Name="Asesores">
+    <Key>
+      <PropertyRef Name="id_asesore" />
+    </Key>
+    <Property Name="id_asesore" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellido_Paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellido_Materno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Lista_Venta">
+    <Key>
+      <PropertyRef Name="id_lista" />
+      <PropertyRef Name="id_prototipo" />
+    </Key>
+    <Property Name="id_lista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_prototipo" Type="Int32" Nullable="false" />
+    <Property Name="Precio_Venta" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Estatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="prototipos" Relationship="DulsaWebModel.FK_Lista_Venta_prototipos" FromRole="Lista_Venta" ToRole="prototipos" />
+  </EntityType>
+  <EntityType Name="prototipos">
+    <Key>
+      <PropertyRef Name="id_prototipo" />
+    </Key>
+    <Property Name="id_prototipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prototipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="M2" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Lista_Venta" Relationship="DulsaWebModel.FK_Lista_Venta_prototipos" FromRole="prototipos" ToRole="Lista_Venta" />
+  </EntityType>
+  <Association Name="FK_Lista_Venta_prototipos">
+    <End Type="DulsaWebModel.prototipos" Role="prototipos" Multiplicity="1" />
+    <End Type="DulsaWebModel.Lista_Venta" Role="Lista_Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prototipos">
+        <PropertyRef Name="id_prototipo" />
+      </Principal>
+      <Dependent Role="Lista_Venta">
+        <PropertyRef Name="id_prototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ciudad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Estado" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Regimen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Nacionalidad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RFC" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="0" />
+    <Property Name="Lugar_nacimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono_casa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Telefono_Celular" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Telefono_Oficina" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sueldo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Beneficiario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

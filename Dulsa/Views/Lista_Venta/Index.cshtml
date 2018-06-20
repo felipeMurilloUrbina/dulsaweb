@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Dulsa.Models.Lista_Venta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio_Venta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prototipos.Prototipo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio_Venta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prototipos.Prototipo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id_lista = item.id_lista, id_prototipo = item.id_prototipo/* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { id_lista = item.id_lista, id_prototipo = item.id_prototipo/* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { id_lista = item.id_lista, id_prototipo = item.id_prototipo/* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

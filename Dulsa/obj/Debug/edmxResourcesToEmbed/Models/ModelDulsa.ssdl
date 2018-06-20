@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DulsaWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asesores">
+    <Key>
+      <PropertyRef Name="id_asesore" />
+    </Key>
+    <Property Name="id_asesore" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellido_Paterno" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellido_Materno" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefono" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="300" />
+    <Property Name="Direccion" Type="nvarchar(max)" />
+    <Property Name="Ciudad" Type="nvarchar" MaxLength="100" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="100" />
+    <Property Name="Regimen" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nacionalidad" Type="nvarchar" MaxLength="100" />
+    <Property Name="RFC" Type="nvarchar" MaxLength="13" />
+    <Property Name="Fecha_Nacimiento" Type="date" />
+    <Property Name="Lugar_nacimiento" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telefono_casa" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Telefono_Celular" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Telefono_Oficina" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Empresa" Type="nvarchar(max)" />
+    <Property Name="Sueldo" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Beneficiario" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Lista_Venta">
+    <Key>
+      <PropertyRef Name="id_lista" />
+      <PropertyRef Name="id_prototipo" />
+    </Key>
+    <Property Name="id_lista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_prototipo" Type="int" Nullable="false" />
+    <Property Name="Precio_Venta" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Estatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Lotes">
+    <Key>
+      <PropertyRef Name="id_lote" />
+    </Key>
+    <Property Name="id_lote" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lote" Type="int" />
+    <Property Name="Manzana" Type="int" />
+    <Property Name="Etapa" Type="int" />
+    <Property Name="M2" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="M2 Excedente" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Importe_Excedente" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Esquina" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Importe_Total" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Estatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="prototipos">
+    <Key>
+      <PropertyRef Name="id_prototipo" />
+    </Key>
+    <Property Name="id_prototipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prototipo" Type="nvarchar" MaxLength="50" />
+    <Property Name="M2" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <Association Name="FK_Lista_Venta_prototipos">
+    <End Role="prototipos" Type="Self.prototipos" Multiplicity="1" />
+    <End Role="Lista_Venta" Type="Self.Lista_Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prototipos">
+        <PropertyRef Name="id_prototipo" />
+      </Principal>
+      <Dependent Role="Lista_Venta">
+        <PropertyRef Name="id_prototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DulsaWebModelStoreContainer">
+    <EntitySet Name="Asesores" EntityType="Self.Asesores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lista_Venta" EntityType="Self.Lista_Venta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lotes" EntityType="Self.Lotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prototipos" EntityType="Self.prototipos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Lista_Venta_prototipos" Association="Self.FK_Lista_Venta_prototipos">
+      <End Role="prototipos" EntitySet="prototipos" />
+      <End Role="Lista_Venta" EntitySet="Lista_Venta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,91 @@
+﻿@model Dulsa.Models.Lotes
+
+@{
+    //ViewBag.Title = "Details";
+    Layout = null;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lotes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manzana)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manzana)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Etapa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etapa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M2_Excedente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M2_Excedente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importe_Excedente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importe_Excedente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Esquina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Esquina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importe_Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importe_Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.id_lote })*@ 
+    @*@Html.ActionLink("Back to List", "Index")*@
+</p>

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Dulsa.Models.Asesores>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mantenimiento de Asesores</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Index</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <a id="btnNuevo" data-toggle="modal" href="#exampleModal" class="btn btn-primary">Nuevo</a>
+    </div>
+</div>
+<br />
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Paterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Materno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido_Materno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    <a href="#exampleModal" class="btnEditar btn-link btn-info" data-toggle="modal" data-id="@item.id_asesore"><i class="glyphicon glyphicon-pencil"></i></a> |
+                    <a href="#exampleModal" class="btnDetails btn-link btn-info" data-toggle="modal" data-id="@item.id_asesore"><i class="glyphicon glyphicon-eye-open"></i></a> |
+                    <a href="#exampleModal" class="btnDelete btn-link btn-info" data-toggle="modal" data-id="@item.id_asesore"><i class="glyphicon glyphicon-trash"></i></a>
+
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.id_asesore }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id_asesore }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id_asesore })*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script src="~/Scripts/Asesores/Asesores.js"></script>
+}
