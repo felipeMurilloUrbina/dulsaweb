@@ -1,14 +1,13 @@
-﻿@model Dulsa.Models.Asesores
+﻿@model Dulsa.Modelo.Asesor
 
 @{
-    //ViewBag.Title = "Details";
-    Layout = null;
+    ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Asesores</h4>
+    <h4>Asesor</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,19 +19,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Apellido_Paterno)
+            @Html.DisplayNameFor(model => model.ApellidoPaterno)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Apellido_Paterno)
+            @Html.DisplayFor(model => model.ApellidoPaterno)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Apellido_Materno)
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Apellido_Materno)
+            @Html.DisplayFor(model => model.ApellidoMaterno)
         </dd>
 
         <dt>
@@ -45,7 +44,7 @@
 
     </dl>
 </div>
-@*<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_asesore }) |
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
-</p>*@
+</p>

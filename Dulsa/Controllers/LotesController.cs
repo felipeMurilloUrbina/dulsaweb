@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Dulsa.Models;
+using Dulsa.Modelo;
 
 namespace Dulsa.Controllers
 {
     public class LotesController : Controller
     {
-        private DulsaWebEntities db = new DulsaWebEntities();
+        private Contexto db = new Contexto();
 
         // GET: Lotes
         public ActionResult Index()
@@ -27,12 +27,12 @@ namespace Dulsa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lotes lotes = db.Lotes.Find(id);
-            if (lotes == null)
+            Lote lote = db.Lotes.Find(id);
+            if (lote == null)
             {
                 return HttpNotFound();
             }
-            return View(lotes);
+            return View(lote);
         }
 
         // GET: Lotes/Create
@@ -42,20 +42,20 @@ namespace Dulsa.Controllers
         }
 
         // POST: Lotes/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_lote,Lote,Manzana,Etapa,M2,M2_Excedente,Importe_Excedente,Esquina,Importe_Total,Estatus")] Lotes lotes)
+        public ActionResult Create([Bind(Include = "Id,Descripcion,Manzana,Etapa,M2,M2Excedente,ImporteExcedente,Esquina,ImporteTotal,Estatus")] Lote lote)
         {
             if (ModelState.IsValid)
             {
-                db.Lotes.Add(lotes);
+                db.Lotes.Add(lote);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(lotes);
+            return View(lote);
         }
 
         // GET: Lotes/Edit/5
@@ -65,28 +65,28 @@ namespace Dulsa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lotes lotes = db.Lotes.Find(id);
-            if (lotes == null)
+            Lote lote = db.Lotes.Find(id);
+            if (lote == null)
             {
                 return HttpNotFound();
             }
-            return View(lotes);
+            return View(lote);
         }
 
         // POST: Lotes/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_lote,Lote,Manzana,Etapa,M2,M2_Excedente,Importe_Excedente,Esquina,Importe_Total,Estatus")] Lotes lotes)
+        public ActionResult Edit([Bind(Include = "Id,Descripcion,Manzana,Etapa,M2,M2Excedente,ImporteExcedente,Esquina,ImporteTotal,Estatus")] Lote lote)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(lotes).State = EntityState.Modified;
+                db.Entry(lote).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(lotes);
+            return View(lote);
         }
 
         // GET: Lotes/Delete/5
@@ -96,12 +96,12 @@ namespace Dulsa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lotes lotes = db.Lotes.Find(id);
-            if (lotes == null)
+            Lote lote = db.Lotes.Find(id);
+            if (lote == null)
             {
                 return HttpNotFound();
             }
-            return View(lotes);
+            return View(lote);
         }
 
         // POST: Lotes/Delete/5
@@ -109,8 +109,8 @@ namespace Dulsa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Lotes lotes = db.Lotes.Find(id);
-            db.Lotes.Remove(lotes);
+            Lote lote = db.Lotes.Find(id);
+            db.Lotes.Remove(lote);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

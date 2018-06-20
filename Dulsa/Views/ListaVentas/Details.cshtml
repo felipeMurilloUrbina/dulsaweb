@@ -1,0 +1,42 @@
+﻿@model Dulsa.Modelo.ListaVenta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ListaVenta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Prototipo.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prototipo.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioVenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioVenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
