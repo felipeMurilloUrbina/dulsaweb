@@ -1,0 +1,10 @@
+C:\self\git\dulsaweb\DulsaWeb.Modelo\bin\Debug\DulsaWeb.Modelo.dll.config
+C:\self\git\dulsaweb\DulsaWeb.Modelo\bin\Debug\DulsaWeb.Modelo.dll
+C:\self\git\dulsaweb\DulsaWeb.Modelo\bin\Debug\DulsaWeb.Modelo.pdb
+C:\self\git\dulsaweb\DulsaWeb.Modelo\bin\Debug\EntityFramework.dll
+C:\self\git\dulsaweb\DulsaWeb.Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\self\git\dulsaweb\DulsaWeb.Modelo\bin\Debug\EntityFramework.xml
+C:\self\git\dulsaweb\DulsaWeb.Modelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\self\git\dulsaweb\DulsaWeb.Modelo\obj\Debug\DulsaWeb.Modelo.dll
+C:\self\git\dulsaweb\DulsaWeb.Modelo\obj\Debug\DulsaWeb.Modelo.pdb
+C:\self\git\dulsaweb\DulsaWeb.Modelo\obj\Debug\DulsaWeb.Modelo.csprojResolveAssemblyReference.cache

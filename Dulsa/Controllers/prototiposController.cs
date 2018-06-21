@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Dulsa.Modelo;
+using DulsaWeb.Modelo;
 
 namespace Dulsa.Controllers
 {
@@ -14,13 +14,13 @@ namespace Dulsa.Controllers
     {
         private Contexto db = new Contexto();
 
-        // GET: Prototipoes
+        // GET: Prototipos
         public ActionResult Index()
         {
             return View(db.Prototipos.ToList());
         }
 
-        // GET: Prototipoes/Details/5
+        // GET: Prototipos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,15 +35,15 @@ namespace Dulsa.Controllers
             return View(prototipo);
         }
 
-        // GET: Prototipoes/Create
+        // GET: Prototipos/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Prototipoes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Prototipos/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Descripcion,M2")] Prototipo prototipo)
@@ -58,7 +58,7 @@ namespace Dulsa.Controllers
             return View(prototipo);
         }
 
-        // GET: Prototipoes/Edit/5
+        // GET: Prototipos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +73,9 @@ namespace Dulsa.Controllers
             return View(prototipo);
         }
 
-        // POST: Prototipoes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Prototipos/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Descripcion,M2")] Prototipo prototipo)
@@ -89,7 +89,7 @@ namespace Dulsa.Controllers
             return View(prototipo);
         }
 
-        // GET: Prototipoes/Delete/5
+        // GET: Prototipos/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace Dulsa.Controllers
             return View(prototipo);
         }
 
-        // POST: Prototipoes/Delete/5
+        // POST: Prototipos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

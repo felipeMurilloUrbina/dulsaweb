@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Dulsa.Modelo;
+using DulsaWeb.Modelo;
 
 namespace Dulsa.Controllers
 {
@@ -44,8 +44,8 @@ namespace Dulsa.Controllers
         }
 
         // POST: ListaVentas/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,PrototipoId,PrecioVenta,Estatus")] ListaVenta listaVenta)
@@ -78,8 +78,8 @@ namespace Dulsa.Controllers
         }
 
         // POST: ListaVentas/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,PrototipoId,PrecioVenta,Estatus")] ListaVenta listaVenta)

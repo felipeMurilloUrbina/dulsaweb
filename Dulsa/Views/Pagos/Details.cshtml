@@ -1,0 +1,82 @@
+﻿@model DulsaWeb.Modelo.Pago
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Etapa.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etapa.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lote.Estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lote.Estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prototipo.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prototipo.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Concepto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Concepto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

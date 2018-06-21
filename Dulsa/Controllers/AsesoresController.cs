@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Dulsa.Modelo;
+using DulsaWeb.Modelo;
 
 namespace Dulsa.Controllers
 {
@@ -14,13 +14,13 @@ namespace Dulsa.Controllers
     {
         private Contexto db = new Contexto();
 
-        // GET: Asesors
+        // GET: Asesores
         public ActionResult Index()
         {
             return View(db.Asesores.ToList());
         }
 
-        // GET: Asesors/Details/5
+        // GET: Asesores/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,15 +35,15 @@ namespace Dulsa.Controllers
             return View(asesor);
         }
 
-        // GET: Asesors/Create
+        // GET: Asesores/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Asesors/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Asesores/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nombre,ApellidoPaterno,ApellidoMaterno,Telefono")] Asesor asesor)
@@ -58,7 +58,7 @@ namespace Dulsa.Controllers
             return View(asesor);
         }
 
-        // GET: Asesors/Edit/5
+        // GET: Asesores/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +73,9 @@ namespace Dulsa.Controllers
             return View(asesor);
         }
 
-        // POST: Asesors/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Asesores/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nombre,ApellidoPaterno,ApellidoMaterno,Telefono")] Asesor asesor)
@@ -89,7 +89,7 @@ namespace Dulsa.Controllers
             return View(asesor);
         }
 
-        // GET: Asesors/Delete/5
+        // GET: Asesores/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace Dulsa.Controllers
             return View(asesor);
         }
 
-        // POST: Asesors/Delete/5
+        // POST: Asesores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

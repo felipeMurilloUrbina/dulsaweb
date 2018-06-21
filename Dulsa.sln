@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27705.2000
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dulsa", "Dulsa\Dulsa.csproj", "{37A6B5E8-CE2D-40B5-9D0D-6770B2261A17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dulsa.Modelo", "Dulsa.Modelo\Dulsa.Modelo.csproj", "{B70600A0-1FC8-4912-AAF7-5CE74D59048C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DulsaWeb.Modelo", "DulsaWeb.Modelo\DulsaWeb.Modelo.csproj", "{B9AB1F97-E0F2-4716-AF8B-59B3DA70661F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,15 +17,12 @@ Global
 		{37A6B5E8-CE2D-40B5-9D0D-6770B2261A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37A6B5E8-CE2D-40B5-9D0D-6770B2261A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37A6B5E8-CE2D-40B5-9D0D-6770B2261A17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B70600A0-1FC8-4912-AAF7-5CE74D59048C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B70600A0-1FC8-4912-AAF7-5CE74D59048C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B70600A0-1FC8-4912-AAF7-5CE74D59048C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B70600A0-1FC8-4912-AAF7-5CE74D59048C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9AB1F97-E0F2-4716-AF8B-59B3DA70661F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AB1F97-E0F2-4716-AF8B-59B3DA70661F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AB1F97-E0F2-4716-AF8B-59B3DA70661F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AB1F97-E0F2-4716-AF8B-59B3DA70661F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7B9FBE9A-3A02-4F20-9FBC-AB00904898C4}
 	EndGlobalSection
 EndGlobal
